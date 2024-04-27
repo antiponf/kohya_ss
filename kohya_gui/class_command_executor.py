@@ -29,6 +29,7 @@ class CommandExecutor:
             )
 
     def execute_command(self, run_cmd: str, use_shell: bool = False, **kwargs):
+        self.process = subprocess.Popen(run_cmd, shell=True, **kwargs)
         """
         Execute a command if no other command is currently running.
 
